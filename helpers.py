@@ -1,4 +1,4 @@
-#need to refactor boardPrinter to be prettier
+#need to refactor boardPrinter to be prettier, also print grid
 def boardPrinter(arr):
     for i in range(len(arr)):
         print(arr[i])
