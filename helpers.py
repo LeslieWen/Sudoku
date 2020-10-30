@@ -1,21 +1,19 @@
+#need to refactor boardPrinter to be prettier
 def boardPrinter(arr):
     for i in range(len(arr)):
         print(arr[i])
 def getRow(arr,rowNum):
     return(arr[rowNum])
-
-def printRow():
-
 def getColumn(arr,colNum):
     colArr=[]
     for i in range(len(arr)):
         colArr.append(arr[i][colNum])
-    for i in range(len(colArr)):
-        print(colArr[i])
-
-#helper functions:
-#getRow()
-#getColumn()
-#getSquare()
-#solved()
-#boardPrinter()
+    return(colArr)
+def printRow(arr,rowNum):
+    print(getRow(arr,rowNum))
+def printColumn():
+    print("")
+def getSquare(row,col):
+    print("")
+def solved(arr):
+    print("")
