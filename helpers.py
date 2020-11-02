@@ -2,14 +2,15 @@
 def boardPrinter(arr):
     print("|=======|=======|=======|")
     for i in range(len(arr)):
-        
+        if i== 3 or i==6 or i==9:
+            print("|=======|=======|=======|")
         tempStr="| "
         for j in range(len(arr[i])):
             if j == 2 or j ==5 or j==8:
                 if arr[i][j] != "b":
                     tempStr=tempStr+str(arr[i][j])+" | "
                 else:
-                    tempStr=tempStr+". |"
+                    tempStr=tempStr+". | "
             else:
                 if arr[i][j] != "b":
                     tempStr=tempStr+str(arr[i][j])+" "
