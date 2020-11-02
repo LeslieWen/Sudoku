@@ -2,14 +2,21 @@
 def boardPrinter(arr):
     print("|=======|=======|=======|")
     for i in range(len(arr)):
+        
         tempStr="| "
         for j in range(len(arr[i])):
-            if arr[i][j] != "b":
-                tempStr=tempStr+str(arr[i][j])
+            if j == 2 or j ==5 or j==8:
+                if arr[i][j] != "b":
+                    tempStr=tempStr+str(arr[i][j])+" | "
+                else:
+                    tempStr=tempStr+". |"
             else:
-                tempStr=tempStr+". "
-        tempStr=tempStr+" |"
+                if arr[i][j] != "b":
+                    tempStr=tempStr+str(arr[i][j])+" "
+                else:
+                    tempStr=tempStr+". "
         print(tempStr)
+
     print("|=======|=======|=======|")
 
 
