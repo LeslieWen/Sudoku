@@ -20,19 +20,22 @@ def boardPrinter(arr):
 
     print("|=======|=======|=======|")
 
-
-
 def getRow(arr,rowNum):
-    return(arr[rowNum])
+    return(arr[rowNum-1])
+def printRow(arr,rowNum):
+    print(getRow(arr,rowNum))
+
+
 def getColumn(arr,colNum):
     colArr=[]
     for i in range(len(arr)):
-        colArr.append(arr[i][colNum])
+        colArr.append(arr[i][colNum-1])
     return(colArr)
-def printRow(arr,rowNum):
-    print(getRow(arr,rowNum))
-def printColumn():
-    print("")
+def printColumn(arr,colNum):
+    print(getColumn(arr,colNum))
+
+
+
 def getSquare(row,col):
     print("")
 def solved(arr):
