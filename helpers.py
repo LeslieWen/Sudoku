@@ -1,4 +1,3 @@
-#need to refactor boardPrinter to be prettier, also print grid
 def boardPrinter(arr):
     print("|=======|=======|=======|")
     for i in range(len(arr)):
@@ -34,9 +33,30 @@ def getColumn(arr,colNum):
 def printColumn(arr,colNum):
     print(getColumn(arr,colNum))
 
+#input two coordinate pairs
+'''
+def getSquare(row,col,arr):
+    row=row-1
+    col=col-1
+    squareArr=[]
+  
+    if (0<=row<=2) and (0<=col<=2):
+        squareArr=squareArr.append(arr[0:3][0:3])            
+    else if(0<=row<=2) and (3<=col<=5):
 
+    else if(0<=row<=2) and (6<=col<=8):
+            
+    #square 1 - row (0 to 2) to col (0 to 2)
+    #square 2 - row (0 to 2) to col (3 to 5)
+    #square 3 - row (0 to 2) to col (6 to 8)
 
-def getSquare(row,col):
-    print("")
-def solved(arr):
+    #square 4 - row (3 to 5) to col (0 to 2)
+    #square 5 - row (3 to 5) to col (3 to 5)
+    #square 6 - row (3 to 5) to col (6 to 8)
+
+    #square 7 - row (6 to 8) to col (0 to 2)
+    #square 8 - row (6 to 8) to col (3 to 5)
+    #square 9 - row (6 to 8) to col (6 to 8)
+'''
+def solved(arr):    
     print("")
