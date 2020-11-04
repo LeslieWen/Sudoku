@@ -79,19 +79,11 @@ def solved(arr):
         if sorted(arr[i])!=list(range(1,10)):
             return flag
     for i in [2,5,8]:
-        if sorted(arrayFlattener(getSquare(2,i)))!=
+        if sorted(arrayFlattener(getSquare(2,i,arr)))!=list(range(1,10)):
+            return flag
+        if sorted(arrayFlattener(getSquare(5,i,arr)))!=list(range(1,10)):
+            return flag
+        if sorted(arrayFlattener(getSquare(8,i,arr)))!=list(range(1,10)):
+            return flag                
+    return True
     
-    
-    '''
-    tempArr=getSquare(2,2,arr)
-    tempArr=getSquare(2,5,arr)
-    tempArr=getSquare(2,8,arr)
-
-    tempArr=getSquare(5,2,arr)
-    tempArr=getSquare(5,5,arr)
-    tempArr=getSquare(5,8,arr)
-
-    tempArr=getSquare(8,2,arr)
-    tempArr=getSquare(8,5,arr)
-    tempArr=getSquare(8,8,arr)
- '''
