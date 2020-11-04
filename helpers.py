@@ -64,8 +64,11 @@ def printSquare(row,col,arr):
 
 #list of list array flattener
 def arrayFlattener(arr):
-    for i in range(arr):
-
+    flatList=[]
+    for i in range(len(arr)):
+        for j in range(len(arr[i])):
+            flatList.append(arr[i][j])
+    return flatList
 
 def solved(arr):
     flag=False
@@ -73,17 +76,22 @@ def solved(arr):
     for i in range(len(arr)):
         if "b" in arr[i]:
             return flag
-        elif arr[i].sort()!=[1,2,3,4,5,6,7,8,9]:
+        if sorted(arr[i])!=list(range(1,10)):
             return flag
+    for i in [2,5,8]:
+        if sorted(arrayFlattener(getSquare(2,i)))!=
+    
+    
+    '''
     tempArr=getSquare(2,2,arr)
     tempArr=getSquare(2,5,arr)
     tempArr=getSquare(2,8,arr)
 
-    tempArr=getSquare(2,2,arr)
-    tempArr=getSquare(2,5,arr)
-    tempArr=getSquare(2,8,arr)
+    tempArr=getSquare(5,2,arr)
+    tempArr=getSquare(5,5,arr)
+    tempArr=getSquare(5,8,arr)
 
-        tempArr=getSquare(2,2,arr)
-    tempArr=getSquare(2,5,arr)
-    tempArr=getSquare(2,8,arr)
- 
+    tempArr=getSquare(8,2,arr)
+    tempArr=getSquare(8,5,arr)
+    tempArr=getSquare(8,8,arr)
+ '''
