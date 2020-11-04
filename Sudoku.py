@@ -6,3 +6,8 @@ from helpers import *
 farr=[[1,2,3,4,5,6,7,'b',9],[1,2,'b',4,5,'b',7,8,9],[1,2,3,4,5,'b',7,8,9],[1,2,3,4,5,6,7,8,9],[1,2,3,4,5,6,7,8,9],[1,2,3,4,5,6,7,8,9],[1,2,3,4,5,6,7,8,9],[1,2,3,4,5,6,7,8,9],[1,2,3,4,5,6,7,8,9]]
 
 boardPrinter(farr)
+
+#input two coordinate pairs row num [1-9] and col num [1-9]
+
+
+print(getSquare(4,1,farr))
