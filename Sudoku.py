@@ -37,7 +37,7 @@ farr3=[
 
 
 boardPrinter(farr3)
-#print("\n")
+print("\n")
 #input two coordinate pairs row num [1-9] and col num [1-9]
 printSquare(1,5,farr3)
 #print(solved(farr))
