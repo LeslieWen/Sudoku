@@ -36,9 +36,9 @@ farr3=[
 [2,3,9,8,4,1,5,6,7]]
 
 
-boardPrinter(farr3)
+boardPrinter(farr)
 print("\n")
 #input two coordinate pairs row num [1-9] and col num [1-9]
-printSquare(1,5,farr3)
+printSquare(1,5,farr)
 #print(solved(farr))
-print(solved(farr3))
+print(solved(farr))
