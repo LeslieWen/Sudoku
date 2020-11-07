@@ -61,7 +61,6 @@ def printSquare(row,col,arr):
     print("| "+str(content[1][0])+" "+str(content[1][1])+" "+str(content[2][2])+" |")
     print("| "+str(content[2][0])+" "+str(content[2][1])+" "+str(content[2][2])+" |")
     print("|=======|")  
-
 #list of list array flattener
 def arrayFlattener(arr):
     flatList=[]
@@ -69,7 +68,6 @@ def arrayFlattener(arr):
         for j in range(len(arr[i])):
             flatList.append(arr[i][j])
     return flatList
-
 def solved(arr):
     flag=False
     tempArr=[]
@@ -86,4 +84,9 @@ def solved(arr):
         if sorted(arrayFlattener(getSquare(8,i,arr)))!=list(range(1,10)):
             return flag                
     return True
-    
+def findEmpty(arr):
+    for i in range(len(arr)):
+        for j in range(len(arr[i])):
+            if arr[i][j] not in range(1,10):
+                return(i,j)
+    return None
