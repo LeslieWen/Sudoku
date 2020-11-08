@@ -1,5 +1,5 @@
 from helpers import *
-from bruteForce import *
+#from bruteForce import *
 
 #input: 9 x 9 Array of Arrays representing sudoku board 0-9, b representing blank
 farr=[
@@ -41,4 +41,6 @@ print("\n")
 #input two coordinate pairs row num [1-9] and col num [1-9]
 printSquare(1,5,farr)
 #print(solved(farr))
-print(solved(farr))
+
+boardPrinter(farr3)
+print(solved(farr3))

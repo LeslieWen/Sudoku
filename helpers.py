@@ -49,7 +49,6 @@ def getSquare(row,col,arr):
         for i in range(len(squareArr)):
             squareArr[i]=(squareArr[i][6:9])
     return(squareArr)
-
 def printSquare(row,col,arr):
     content=getSquare(row,col,arr)
     for i in range(len(content)):
@@ -68,6 +67,7 @@ def arrayFlattener(arr):
         for j in range(len(arr[i])):
             flatList.append(arr[i][j])
     return flatList
+#returns true or false based on whether sudoku board is solved
 def solved(arr):
     flag=False
     tempArr=[]
@@ -90,3 +90,5 @@ def findEmpty(arr):
             if arr[i][j] not in range(1,10):
                 return(i,j)
     return None
+#given a board 
+def validate(arr,num,pos):
