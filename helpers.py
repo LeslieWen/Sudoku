@@ -6,12 +6,12 @@ def boardPrinter(arr):
         tempStr="| "
         for j in range(len(arr[i])):
             if j == 2 or j ==5 or j==8:
-                if arr[i][j] != "b":
+                if arr[i][j] in list(range(1,10)):
                     tempStr=tempStr+str(arr[i][j])+" | "
                 else:
                     tempStr=tempStr+". | "
             else:
-                if arr[i][j] != "b":
+                if arr[i][j] in list(range(1,10)):
                     tempStr=tempStr+str(arr[i][j])+" "
                 else:
                     tempStr=tempStr+". "
@@ -53,7 +53,7 @@ def printSquare(row,col,arr):
     content=getSquare(row,col,arr)
     for i in range(len(content)):
         for j in range(len(content[i])):
-            if content[i][j]=="b":
+            if content[i][j] not in list(range(1,10)):
                 content[i][j]="."
     print("|=======|")
     print("| "+str(content[0][0])+" "+str(content[0][1])+" "+str(content[0][2])+" |")
@@ -90,5 +90,21 @@ def findEmpty(arr):
             if arr[i][j] not in range(1,10):
                 return(i,j)
     return None
-#given a board 
+#given a coordinate, check if num is a valid choice
 def validate(arr,num,pos):
+    #row checker
+    for i in range(len(arr[0])):
+        if arr[pos[0]][i]==num and pos[1]!=i:
+            return False
+    #column checker
+    for i in range(len(arr)):
+        if arr[i][pos[1]]==num and pos[0]!=i:
+            return False
+    #square checker
+    indexMap=[0,1,2,0,1,2,0,1,2]
+    tempSqr=getSquare((int(pos[0])+1),(int(pos[1])+1),arr)
+    for i in range(3):
+        for j in range(3):
+            if tempSqr[i][j] == num and (i,j)!=(indexMap[pos[0]],indexMap[pos[1]]):
+                return False
+    return True
