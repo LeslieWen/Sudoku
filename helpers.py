@@ -1,3 +1,5 @@
+#Prints the current state of the Sudoku board
+
 def boardPrinter(arr):
     print("|=======|=======|=======|")
     for i in range(len(arr)):
@@ -17,10 +19,16 @@ def boardPrinter(arr):
                     tempStr=tempStr+". "
         print(tempStr)
     print("|=======|=======|=======|")
+
+#Returns specified row (1-9)
+
 def getRow(arr,rowNum):
     return(arr[rowNum-1])
 def printRow(arr,rowNum):
     print(getRow(arr,rowNum))
+
+#Returns specified column (1-9)
+
 def getColumn(arr,colNum):
     colArr=[]
     for i in range(len(arr)):
@@ -28,7 +36,10 @@ def getColumn(arr,colNum):
     return(colArr)
 def printColumn(arr,colNum):
     print(getColumn(arr,colNum))
-#input two coordinate pairs row and col
+
+#Input two coordinate pairs row and col, returns 
+#the square that cell belongs to
+
 def getSquare(row,col,arr):
     row=row-1
     col=col-1
@@ -49,6 +60,9 @@ def getSquare(row,col,arr):
         for i in range(len(squareArr)):
             squareArr[i]=(squareArr[i][6:9])
     return(squareArr)
+
+#Prints the specified square that contains coordinate row and col
+
 def printSquare(row,col,arr):
     content=getSquare(row,col,arr)
     for i in range(len(content)):
@@ -59,15 +73,18 @@ def printSquare(row,col,arr):
     print("| "+str(content[0][0])+" "+str(content[0][1])+" "+str(content[0][2])+" |")
     print("| "+str(content[1][0])+" "+str(content[1][1])+" "+str(content[2][2])+" |")
     print("| "+str(content[2][0])+" "+str(content[2][1])+" "+str(content[2][2])+" |")
-    print("|=======|")  
-#list of list array flattener
+    print("|=======|")
+
+#List of list array flattener
+
 def arrayFlattener(arr):
     flatList=[]
     for i in range(len(arr)):
         for j in range(len(arr[i])):
             flatList.append(arr[i][j])
     return flatList
-#returns true or false based on whether sudoku board is solved
+#Returns true or false based on whether sudoku board is solved
+
 def solved(arr):
     flag=False
     tempArr=[]
@@ -84,13 +101,18 @@ def solved(arr):
         if sorted(arrayFlattener(getSquare(8,i,arr)))!=list(range(1,10)):
             return flag                
     return True
+
+#Find the first empty cell in the board
+    
 def findEmpty(arr):
     for i in range(len(arr)):
         for j in range(len(arr[i])):
             if arr[i][j] not in range(1,10):
                 return(i,j)
     return None
-#given a coordinate, check if num is a valid choice
+
+#Given a coordinate, check if num is a legal choice
+
 def validate(arr,num,pos):
     #row checker
     for i in range(len(arr[0])):
