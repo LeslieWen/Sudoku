@@ -18,7 +18,7 @@ arr=[
 sg.theme('DarkBlack1')
 def main():
     layout=[
-        [sg.Text("This program solves Sudoku puzzles by brute force.")],
+        [sg.Text("This program solves Sudoku puzzles by brute force. Click run once to show the puzzle and click twice to solve.")],
         [sg.Output(size=(100,30), background_color='teal', text_color='white')],
         #[sg.T('Prompt> '),sg.Input(key='-IN-', do_not_clear=False)],
         [sg.Button('Run',bind_return_key=True)],
@@ -35,6 +35,7 @@ def main():
             break
         if event =='Run':
             boardPrinter(arr)
+            backTrack(arr)
     window.Close()
 
 main()
