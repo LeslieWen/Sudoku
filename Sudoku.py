@@ -1,7 +1,18 @@
-import subprocess
-import sys
 import PySimpleGUI as sg
 
+from bruteForce import *
+from helpers import * 
+
+arr=[
+[0,3,9,2,0,8,7,1,5],
+[6,0,8,0,0,1,0,0,0],
+[0,5,0,9,3,0,8,4,6],
+[7,0,4,0,1,0,0,5,8],
+[8,1,0,6,4,0,3,7,0],
+[0,2,0,8,0,5,1,0,4],
+[5,0,3,0,9,0,0,2,1],
+[0,4,1,5,0,3,0,0,7],
+[9,0,0,1,2,0,5,8,0]]
 
 #Define the window layout
 sg.theme('DarkBlack1')
@@ -18,25 +29,12 @@ def main():
     #Event loop
 
     while True:
-        event, values = window.read()
-        #End program if user closes window or
-        #presses the OK button
-        if event == sg.WIN_CLOSED:
+        window.Refresh()
+        (event, values) = window.Read()
+        if event =='EXIT' or event is None:
             break
-        elif event == 'Run':
-            runCommand(cmd=values['py -c \'from testers import test1; test1()\''],window=window)
-    window.close()
-
-def runCommand(cmd,timeout=None,window=None):
-    nop=None
-    p=subprocess.Popen(cmd,shell=True,stdout=subprocess.PIPE,stderr=subprocess.STDOUT)
-    output=''
-    for line in p.stdout:
-        line=line.decode(errors='replace' if (sys.version_info)< (3,5) else 'backslashreplace').rstrip()
-        outplut+=line
-        print(line)
-        window.refresh() if window else nop
-    retval = p.wait(timeout)
-    return (retval, output)
+        if event =='Run':
+            boardPrinter(arr)
+    window.Close()
 
 main()
